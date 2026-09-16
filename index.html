@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#151520">
+<title>Pulse Tap. Игра на реакцию для iPhone</title>
+<meta name="description" content="Сложнее, чем кажется. Найди нужный цвет, пока не закончилось время. Аркада на чистый рефлекс: задание в центре кольца, сетка плиток и серия, которая множит очки.">
+<link rel="canonical" href="https://pulsetapgame.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Pulse Tap. Игра на реакцию для iPhone">
+<meta property="og:description" content="Сложнее, чем кажется. Найди нужный цвет, пока не закончилось время.">
+<meta property="og:image" content="https://pulsetapgame.com/assets/img/og-image.png">
+<meta property="og:url" content="https://pulsetapgame.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/site.css">
+<!-- После публикации в App Store раскомментировать и подставить APP_ID:
+<meta name="apple-itunes-app" content="app-id=APP_ID"> -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <img class="logo-mark" src="/assets/img/icon-64.png" width="26" height="26" alt="">
+      PULSE <span class="gold">TAP</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <img src="/assets/img/icon-512.png" width="128" height="128" alt="Иконка игры Pulse Tap">
+    <h1>PULSE <span class="gold">TAP</span></h1>
+    <p class="slogan">Сложнее, чем кажется. Найди нужный цвет, пока не закончилось время.</p>
+
+    <!-- До релиза: неактивная плашка. После релиза заменить блоком ниже,
+         подставив APP_ID (см. README, раздел «Бейдж App Store»). -->
+    <span class="btn btn--soon">Скоро в App&nbsp;Store</span>
+    <!--
+    <a class="badge" href="https://apps.apple.com/ru/app/idAPP_ID">
+      <img src="/assets/img/app-store-badge-ru.svg" width="180" height="60"
+           alt="Загрузите в App Store">
+    </a>
+    -->
+  </section>
+
+  <section class="wrap" aria-label="Скриншоты игры">
+    <div class="shots">
+      <picture>
+        <source srcset="/assets/img/screen-1.webp" type="image/webp">
+        <img src="/assets/img/screen-1.png" width="600" height="1303" loading="lazy" decoding="async"
+           alt="Экран игры: задание «Жёлтый» в центре кольца, под ним сетка плиток">
+      </picture>
+      <picture>
+        <source srcset="/assets/img/screen-2.webp" type="image/webp">
+        <img src="/assets/img/screen-2.png" width="600" height="1303" loading="lazy" decoding="async"
+           alt="Экран игры: задание «Синий и жёлтый», два цвета сразу, множитель ×7">
+      </picture>
+      <picture>
+        <source srcset="/assets/img/screen-3.webp" type="image/webp">
+        <img src="/assets/img/screen-3.png" width="600" height="1303" loading="lazy" decoding="async"
+           alt="Экран игры: обманка, слово «Синий» написано жёлтым, подсказка «смотри на слово», множитель ×10">
+      </picture>
+    </div>
+  </section>
+
+  <div class="board" aria-hidden="true">
+    <span class="tile tile--red"></span>
+    <span class="tile"></span>
+    <span class="tile tile--blue"></span>
+    <span class="tile tile--green tile--breathing"></span>
+    <span class="tile"></span>
+    <span class="tile"></span>
+    <span class="tile"></span>
+    <span class="tile tile--yellow"></span>
+    <span class="tile"></span>
+  </div>
+
+  <section class="wrap">
+    <div class="features">
+      <div>
+        <span class="tile feature-tile tile--green" aria-hidden="true"></span>
+        <p class="kicker">Чистый рефлекс</p>
+        <p>Задание в центре таймера, нажми правильный вариант под ним. Верное нажатие возвращает немного времени. Кольцо опустело, игра окончена.</p>
+      </div>
+      <div>
+        <span class="tile feature-tile tile--red" aria-hidden="true"></span>
+        <p class="kicker">Серия решает всё</p>
+        <p>Множитель растёт с каждым верным нажатием подряд. Промах не заканчивает игру, но сбивает множитель и отнимает время.</p>
+      </div>
+      <div>
+        <span class="tile feature-tile tile--blue" aria-hidden="true"></span>
+        <p class="kicker">Без экранов с правилами</p>
+        <p>Правила показываются по ходу игры, прямо в тот момент, когда они нужны.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav>
+      <a href="/support/">Поддержка</a>
+      <a href="/privacy/">Политика конфиденциальности</a>
+    </nav>
+    <p>© 2026 Миллер Кирилл Александрович</p>
+  </div>
+</footer>
+</body>
+</html>

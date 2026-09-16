@@ -1,0 +1,280 @@
+/* Pulse Tap — one stylesheet for the whole site.
+   Colours are the game's own values, taken from Theme.swift and Palette.swift. */
+
+:root {
+  --bg: #151520;          /* Theme.background */
+  --surface: #1e1e2a;     /* Theme.emptyTile — cards and empty tiles */
+  --text: #f2f2f2;        /* Theme.ink */
+  --text-2: #a0a0a0;      /* lighter than the game's secondary ink, for 4.5:1 on the web */
+  --line: #2a2a38;
+  --accent: #f5c74d;      /* Theme.gold — every action in the game is gold */
+  --accent-ink: #151520;  /* text on a gold button */
+  --tile-green: #5cb076;
+  --tile-yellow: #f2c75c;
+  --tile-red: #e04a59;
+  --tile-blue: #6385f2;
+  --radius-tile: 32%;     /* the game's 14pt corner on a 108pt tile */
+  --page: 1040px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) { body { font-size: 18px; } }
+
+.wrap {
+  width: 100%;
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Headings share the game's heavy, tight voice. */
+h1, h2, h3, .logo, .badge, .btn {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(40px, 9vw, 72px); line-height: 1.05; margin: 0; }
+h2 { font-size: clamp(22px, 4vw, 30px); line-height: 1.25; margin: 0 0 12px; }
+h3 { font-size: 19px; margin: 0 0 6px; }
+p { margin: 0 0 16px; max-width: 68ch; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin: 0 0 8px;
+}
+
+/* Header and footer ------------------------------------------------------ */
+
+.site-header { padding: 22px 0 8px; }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.gold { color: var(--accent); }
+
+/* The app's own icon, not a plain tile. */
+.logo-mark { width: 26px; height: 26px; border-radius: 8px; }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 64px;
+  padding: 28px 0 44px;
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 12px; }
+.site-footer a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Landing ---------------------------------------------------------------- */
+
+.hero { padding: 24px 0 8px; text-align: center; }
+.hero img { width: 128px; height: 128px; border-radius: 28px; }
+.hero h1 { margin: 20px 0 12px; }
+
+.slogan {
+  font-size: clamp(18px, 4.4vw, 22px);
+  color: var(--text-2);
+  margin: 0 auto 28px;
+  max-width: 30ch;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 26px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.btn--soon {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--line);
+  cursor: default;
+}
+
+/* Screenshots ------------------------------------------------------------ */
+
+.shots {
+  display: flex;
+  gap: 16px;
+  margin: 40px 0 8px;
+  padding-bottom: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.shots img {
+  width: 220px;
+  height: auto;
+  flex: 0 0 auto;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .shots { justify-content: center; overflow: visible; }
+  .shots img { width: 260px; }
+}
+
+/* Decorative board ------------------------------------------------------- */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(280px, 72vw);
+  margin: 48px auto 8px;
+}
+
+.tile {
+  aspect-ratio: 1;
+  border-radius: var(--radius-tile);
+  background: var(--surface);
+}
+
+.tile--green { background: var(--tile-green); }
+.tile--yellow { background: var(--tile-yellow); }
+.tile--red { background: var(--tile-red); }
+.tile--blue { background: var(--tile-blue); }
+
+/* The colourblind shapes the game draws on its tiles: red is a circle, blue a
+   cross, yellow a triangle, green a diamond. Decorative here. */
+.tile--green, .tile--yellow, .tile--red, .tile--blue { position: relative; }
+
+.tile--green::after, .tile--yellow::after, .tile--red::after, .tile--blue::after {
+  content: "";
+  position: absolute;
+  inset: 32%;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.tile--red::after { border-radius: 50%; }
+.tile--green::after { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.tile--yellow::after { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.tile--blue::after {
+  clip-path: polygon(34% 0, 66% 0, 66% 34%, 100% 34%, 100% 66%, 66% 66%, 66% 100%,
+                     34% 100%, 34% 66%, 0 66%, 0 34%, 34% 34%);
+}
+
+/* One tile breathes, the way the game invites a first tap. */
+.tile--breathing { animation: breathe 2.4s ease-in-out infinite; }
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* Features --------------------------------------------------------------- */
+
+.features {
+  display: grid;
+  gap: 32px;
+  margin: 48px 0 8px;
+}
+
+@media (min-width: 768px) {
+  .features { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+}
+
+.feature-tile {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  margin-bottom: 14px;
+}
+
+
+/* Text pages ------------------------------------------------------------- */
+
+.page { padding: 8px 0 0; }
+.page h1 { font-size: clamp(30px, 6vw, 44px); margin-bottom: 8px; }
+.page h2 { font-size: clamp(19px, 3.4vw, 24px); margin-top: 36px; }
+.page ul { max-width: 68ch; padding-left: 20px; }
+.page li { margin-bottom: 8px; }
+
+.lead { color: var(--text-2); }
+
+.fill {
+  background: rgba(245, 199, 77, 0.16);
+  border-bottom: 1px solid var(--accent);
+  padding: 0 4px;
+}
+
+/* FAQ -------------------------------------------------------------------- */
+
+.faq { margin-top: 12px; }
+
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 4px 18px;
+  margin-bottom: 12px;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 14px 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; margin-left: auto; color: var(--text-2); font-size: 22px; line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq p:last-child { margin-bottom: 16px; }
+
+/* 404 -------------------------------------------------------------------- */
+
+.center { text-align: center; padding: 40px 0 0; }
+.center p { margin-left: auto; margin-right: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
