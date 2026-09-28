@@ -1,0 +1,11 @@
+{
+  "_note": "Pulse Tap remote settings. The app clamps every value and ignores keys it does not know, so a mistake here cannot break the game — it falls back to the numbers built into the build.",
+  "openingFever": {
+    "segments": 5,
+    "roundsPerSegment": 3
+  },
+  "standardFever": {
+    "segments": 4,
+    "roundsPerSegment": 5
+  }
+}
