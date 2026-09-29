@@ -1,23 +1,21 @@
 {
   "_note": "Pulse Tap remote settings",
-  "openingFever": {
-    "segments": 5,
-    "roundsPerSegment": 3
-  },
-  "standardFever": {
-    "segments": 5,
-    "roundsPerSegment": 4
-  },
+  "openingFever": { "segments": 5, "roundsPerSegment": 3 },
+  "standardFever": { "segments": 5, "roundsPerSegment": 4 },
+
   "levelSeconds": {
-    "easy": 20,
-    "medium": 15,
-    "hard": 10
+    "intro":     { "easy": 20, "medium": 15, "hard": 10 },
+    "classic":   { "easy": 20, "medium": 15, "hard": 10 },
+    "connect":   { "easy": 20, "medium": 15, "hard": 10 },
+    "direction": { "easy": 20, "medium": 15, "hard": 10 },
+    "mix":       { "easy": 20, "medium": 15, "hard": 10 }
   },
+
   "levelTapReward": {
-    "intro": 0.10,
-    "classic": 0.10,
-    "direction": 0.20,
-    "connect": 0.10,
-    "mix": 0.10
+    "intro":     { "easy": 0.10, "medium": 0.10, "hard": 0.10 },
+    "classic":   { "easy": 0.10, "medium": 0.10, "hard": 0.10 },
+    "connect":   { "easy": 0.10, "medium": 0.10, "hard": 0.10 },
+    "direction": { "easy": 0.20, "medium": 0.20, "hard": 0.20 },
+    "mix":       { "easy": 0.10, "medium": 0.10, "hard": 0.10 }
   }
 }
