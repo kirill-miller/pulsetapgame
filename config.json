@@ -12,7 +12,7 @@
   "levelTapReward": {
     "intro":     { "easy": 0.10, "medium": 0.10, "hard": 0.10 },
     "classic":   { "easy": 0.10, "medium": 0.10, "hard": 0.10 },
-    "connect":   { "easy": 0.20, "medium": 0.20, "hard": 0.20 },
+    "connect":   { "easy": 0.40, "medium": 0.40, "hard": 0.40 },
     "direction": { "easy": 0.20, "medium": 0.20, "hard": 0.20 },
     "mix":       { "easy": 0.10, "medium": 0.10, "hard": 0.10 }
   }
