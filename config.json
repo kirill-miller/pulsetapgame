@@ -3,12 +3,10 @@
   "openingFever": { "segments": 5, "roundsPerSegment": 3 },
   "standardFever": { "segments": 5, "roundsPerSegment": 4 },
 
-  "levelSeconds": {
-    "intro":     { "easy": 20, "medium": 15, "hard": 10 },
-    "classic":   { "easy": 20, "medium": 15, "hard": 10 },
-    "connect":   { "easy": 20, "medium": 15, "hard": 10 },
-    "direction": { "easy": 20, "medium": 15, "hard": 10 },
-    "mix":       { "easy": 20, "medium": 15, "hard": 10 }
+  "levelBudget": {
+    "easy":   { "perRound": 0.45, "perTarget": 0.80, "perExtraTap": 0.32 },
+    "medium": { "perRound": 0.35, "perTarget": 0.62, "perExtraTap": 0.25 },
+    "hard":   { "perRound": 0.25, "perTarget": 0.46, "perExtraTap": 0.18 }
   },
 
   "levelTapReward": {
